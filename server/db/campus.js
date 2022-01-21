@@ -1,15 +1,17 @@
 const Sequelize = require('sequelize')
 const db = require('./database')
 
-//Making table for campus model
+//Campus model
 
 //has a name, imageUrl, address, and description
 
 const Campus = db.define('campus', {
     name: {
-        type: Sequelize.TEXT,
-        allowNull: false
+        type: Sequelize.STRING(50),
+        allowNull: false,
+        isUnique: true
     },
+    //Make sure it is a url
     imageUrl: {
         type: Sequelize.STRING,
         validate: {
