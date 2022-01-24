@@ -5,7 +5,7 @@ const {Student} = require('../db')
 router.get('/students', async (req, res) => {
     try {
         const students = await Student.findAll()
-        res.status(200).send(students.json())
+        res.status(200).send(students)
     } catch (error) {
         res.status(404).send(error.message)
     }
