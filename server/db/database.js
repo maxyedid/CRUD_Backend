@@ -4,11 +4,10 @@ const pkg = require('../../package.json')
 
 
 //Creating database url for the api
-const db = new Sequelize(
-    process.env.DATABASE_url || `postgres:localhost:3000/${pkg.name}`,
-    {
-        logging: false
-    }
+const db = new Sequelize('students', 'postgres', 'ready482', {
+        host: 'localhost',
+        dialect: 'postgres'
+        }
 )
 
 module.exports = db;

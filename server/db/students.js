@@ -20,8 +20,8 @@ const Student = db.define('student', {
             validate: {
                 isEmail: true
             },
-            allowNull: false,
-            unique: true
+            allowNull: false
+          //  unique: true
         },
         //Check for valid url
         imageURL: {
@@ -30,7 +30,7 @@ const Student = db.define('student', {
                 isURL: true
             },
             defaultValue: "https://st3.depositphotos.com/4111759/13425/v/380/depositphotos_134255588-stock-illustration-empty-photo-of-male-profile.jpg?forcejpeg=true",
-            allowNull: false
+            allowNull: true
         },
         //Making sure that gpa goes only up to one decimal place
         gpa: {

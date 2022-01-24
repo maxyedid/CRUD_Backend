@@ -8,8 +8,7 @@ const db = require('./database')
 const Campus = db.define('campus', {
     name: {
         type: Sequelize.STRING(50),
-        allowNull: false,
-        isUnique: true
+        allowNull: false
     },
     //Make sure it is a url
     imageUrl: {
@@ -17,7 +16,7 @@ const Campus = db.define('campus', {
         validate: {
             isURL: true
         },
-        allowNull: false
+        allowNull: true
     },
     address: {
         type: Sequelize.STRING,
